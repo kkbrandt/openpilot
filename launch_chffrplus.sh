@@ -37,6 +37,11 @@ function two_init {
   echo 1 > /proc/irq/33/smp_affinity_list # ufshcd (flash storage)
   echo 1 > /proc/irq/35/smp_affinity_list # wifi (wlan_pci)
   echo 1 > /proc/irq/6/smp_affinity_list  # MDSS
+
+  # GPU and camera
+  echo 2 > /proc/irq/184/smp_affinity_list # ispif
+  echo 2 > /proc/irq/193/smp_affinity_list # kgsl-3d0
+
   # USB traffic needs realtime handling on cpu 3
   [ -d "/proc/irq/733" ] && echo 3 > /proc/irq/733/smp_affinity_list # USB for LeEco
   [ -d "/proc/irq/736" ] && echo 3 > /proc/irq/736/smp_affinity_list # USB for OP3T
