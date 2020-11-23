@@ -40,6 +40,7 @@ function two_init {
 
   # GPU and camera
   echo 2 > /proc/irq/184/smp_affinity_list # ispif
+  echo 2 > /proc/irq/192/smp_affinity_list # cci
   echo 2 > /proc/irq/193/smp_affinity_list # kgsl-3d0
 
   # USB traffic needs realtime handling on cpu 3
